@@ -47,4 +47,21 @@
             </tr>
         </table>
     </body>
+    <hr>
+    <body>
+        <h1>Code Snippet</h1>
+        </blockquote> 
+        <a href ="https://stackoverflow.com/questions/35814152/how-to-remove-extra-attributes-of-img-tag-using-regular-expression">link to the relevant question</a>
+        </blockquote>
+        <pre>
+            add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+            add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+            
+            function remove_width_attribute( $html ) {
+               $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+               return $html;
+            }
+              
+        </pre>
+    </body>
 </html>
